@@ -3,7 +3,8 @@
     <%= form_for Spree::WishedProduct.new do |f| %>
       <%= f.hidden_field :variant_id, value: @product.master.id %>
       <%= f.hidden_field :quantity %>
-      <button type="submit" class="btn btn-info">
+      <!-- You must include tether.min.js before boostrap.js for this tooltip to work -->
+      <button type="submit" class="btn btn-info" id="wishlist-tooltip-btn" data-toggle="tooltip" data-placement="top" title="Add to Favorites">
         <%= Spree.t(:add_to_wishlist) %>
       </button>
     <% end %>
